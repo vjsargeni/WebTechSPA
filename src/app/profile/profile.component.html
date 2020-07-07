@@ -1,0 +1,32 @@
+<mat-card class="">
+  <mat-card-title>User Profile</mat-card-title>
+  <mat-tab-group (selectedIndexChange)="this.selectedTabIndex=$event">
+    <mat-tab label="Personal Information">
+      <mat-form-field>
+        <input matInput placeholder="First name" [formControl]="firstnameControl">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last name" [formControl]="lastnameControl">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" [formControl]="emailControl">
+      </mat-form-field>
+    </mat-tab>
+    
+    <mat-tab label="Security">
+      <mat-form-field> 
+        <input matInput type="password" [formControl]="oldPasswordControl" placeholder="Current password" required>
+      </mat-form-field>
+      <mat-form-field> 
+        <input matInput type="password" [formControl]="passwordControl" placeholder="New password" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" [formControl]="password2Control" placeholder="Confirm new password" required>
+      </mat-form-field>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="saveActiveInfo()">Save</button>
+  </div>
+</mat-card>

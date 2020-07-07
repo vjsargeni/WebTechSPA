@@ -1,0 +1,28 @@
+mat-card {
+    margin: 0 auto;
+    width: 628px;
+    float: none;
+}
+
+mat-card button {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: center;
+  font-size: 4em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+mat-form-field {
+    width: 100%;
+}
+

@@ -1,0 +1,11 @@
+<div class="routes">
+    <div class="panel-group route" [attr.id]="'accordion_' + i" *ngFor="let trip of trips; let i = index;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p class="dests" style="font-size: 22px">{{trip.startStation}} &#8594; {{trip.destStation}}</p>
+                <img id="routeimg" src="../../assets/{{trip.startStation}}{{trip.destStation}}.png" />
+                <p class="desc">{{formatDate(trip.startTime)}} &#8594; {{formatDate(trip.destTime)}}</p>
+            </div>
+        </div>
+    </div>
+</div>

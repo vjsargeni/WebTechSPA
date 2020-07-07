@@ -1,0 +1,23 @@
+<div class="routes">
+    <div class="panel-group route" [attr.id]="'accordion_' + i" *ngFor="let route of routesList; let i = index;">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <p class="dests" style="font-size: 22px">{{route.startStation}} &#8594; {{route.destStation}}</p>
+                <img id="routeimg" src="../../assets/{{route.startStation}}{{route.destStation}}.png" />
+                <p class="desc"><span>Train:</span> {{route.train.name}}</p>
+                <p class="desc"><span>Seats:</span> {{route.train.capacity}}</p>
+                <div *ngIf="this.authService.isLoggedIn()">
+                  <mat-form-field>
+                    <mat-label>Time</mat-label>
+                    <mat-select #time required [value]="'0'">
+                      <mat-option *ngFor="let trip of route.trips; let j = index;" value="{{j}}">
+                        {{formatDate(trip[0])}} &#8594; {{formatDate(trip[1])}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <input class="btn" type="button" value="Reserve Me" (click)="resTicket(i, time.value)">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

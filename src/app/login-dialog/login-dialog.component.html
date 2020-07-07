@@ -1,0 +1,18 @@
+<h5 mat-dialog-title>Log In</h5>
+<div mat-dialog-content>
+  <form [formGroup]="loginForm">
+    <fieldset>
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Email" name="email" formControlName="email" required>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <input matInput type="password" placeholder="Password" name="password" formControlName="password" required>
+      </mat-form-field>
+    </fieldset>
+  </form>
+</div>
+<div mat-dialog-actions class="btn-group d-flex" role="group">
+  <button class="w-100 mr-1" mat-button (click)="onCancel()">Cancel</button>
+  <button class="w-100" mat-flat-button (click)="onSubmit()" color="primary">Submit</button>
+</div>
+
